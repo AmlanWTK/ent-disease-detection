@@ -1,0 +1,25 @@
+# Datasets: too large for GitHub and have their own licenses. Download them locally.
+data/**
+!data/**/
+!data/**/.gitkeep
+!data/README.md
+
+# Trained models and generated reports
+models/*
+!models/.gitkeep
+reports/*
+!reports/.gitkeep
+*_report/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.ipynb_checkpoints/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
