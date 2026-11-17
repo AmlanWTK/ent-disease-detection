@@ -32,3 +32,16 @@ Download the datasets into `data/` (see `data/README.md`).
 ```bash
 python scripts/inspect_dataset.py data/ear/chile --out reports/ear_chile
 ```
+
+## Make a leakage-free split
+
+The official Chile ear split leaks: 69 test images are exact copies of training
+images, and 326 near-duplicate pairs cross train/test. This script pools all images,
+removes copies, groups near-duplicates (same patient / video) and splits by group.
+
+```bash
+python scripts/make_group_split.py data/ear/chile/Datos --out data/ear/chile/split_v1 --copy
+```
+
+Outputs `split.csv` (path, class, group, split), `split_summary.txt` and
+`cross_class_pairs.png` (near-duplicates with different labels to check by eye).
